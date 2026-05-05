@@ -6,249 +6,154 @@
 <title>Infinite Followers</title>
 
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background: #0b0f1a;
-    color: white;
-}
+body{margin:0;font-family:Arial;background:#0b0f1a;color:#fff;}
+.hidden{display:none;}
+header{padding:15px 20px;background:#0f1629;}
+.logo{font-size:20px;font-weight:bold;color:#7c5cff;}
 
-.hidden{ display:none; }
+.hero{padding:60px 20px;text-align:center;animation:fadeIn 1s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-header{
-    padding:15px 20px;
-    background:#0f1629;
-}
+.hero h1{font-size:32px;background:linear-gradient(90deg,#7c5cff,#c084fc);-webkit-background-clip:text;color:transparent;}
+.hero p{color:#aaa;}
 
-.logo{
-    font-size:20px;
-    font-weight:bold;
-    color:#7c5cff;
-}
+.btn{padding:18px 40px;border-radius:12px;border:none;font-size:20px;background:#7c5cff;color:#fff;margin-top:20px;cursor:pointer;}
+.btn:hover{transform:scale(1.05);transition:.2s;}
 
-.hero{
-    text-align:center;
-    padding:60px 20px;
-}
-
-.hero h1{
-    font-size:32px;
-    background: linear-gradient(90deg,#7c5cff,#c084fc);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.hero p{
-    color:#aaa;
-}
-
-.btn{
-    padding:18px 40px;
-    border-radius:12px;
-    border:none;
-    cursor:pointer;
-    font-size:20px;
-    background:#7c5cff;
-    color:white;
-    margin-top:20px;
-}
-
-.btn.disabled{
-    background:gray;
-    cursor:not-allowed;
-}
-
-.section{
-    padding:40px 20px;
-}
-
-.card{
-    background:#111827;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:15px;
-    font-size:18px;
-    cursor:pointer;
-}
-
-.card.done{
-    background:#1f2937;
-    opacity:0.6;
-    text-decoration:line-through;
-}
-
-.warning{
-    background:#2a1f00;
-    color:#ffcc00;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
+.section{padding:40px 20px;}
+.card{background:#111827;padding:20px;border-radius:15px;margin-bottom:15px;font-size:18px;cursor:pointer;}
+.card.done{background:#1f2937;opacity:.6;text-decoration:line-through;}
+.warning{background:#2a1f00;color:#ffcc00;padding:15px;border-radius:10px;margin-bottom:20px;}
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">🚀 Infinite Followers</div>
-</header>
+<header><div class="logo">🚀 Infinite Followers</div></header>
 
-<!-- HOME -->
 <div id="home">
-    <section class="hero">
-        <h1>Consigue seguidores infinitos</h1>
-        <p>Completa tareas y crece</p>
-        <button class="btn" onclick="mostrar('panel')">Empezar</button>
-    </section>
+<section class="hero">
+<h1>Consigue seguidores infinitos</h1>
+<p>Completa tareas y crece</p>
+<button class="btn" onclick="mostrar('panel')">Empezar</button>
+</section>
 </div>
 
-<!-- PANEL -->
 <div id="panel" class="hidden">
-    <section class="section">
-        <h2>📋 Tareas disponibles</h2>
-        <p style="color:#ffcc00;">⚠️ Sigue el canal antes de cumplir las tareas o no se validarán</p>
-
-        <div class="card" onclick="mostrar('video')">🎬 Ver el video completo</div>
-        <div class="card" onclick="mostrar('like')">❤️ Dar like al video</div>
-        <div class="card" onclick="mostrar('comentario')">💬 Comentar en el video</div>
-    </section>
+<section class="section">
+<h2>📋 Tareas disponibles</h2>
+<div class="card" onclick="mostrar('video')">🎬 Ver video</div>
+<div class="card" onclick="mostrar('like')">❤️ Like</div>
+<div class="card" onclick="mostrar('comentario')">💬 Comentar</div>
+</section>
 </div>
 
 <!-- VIDEO -->
 <div id="video" class="hidden">
-    <section class="section">
-        <h2>🎬 Ver el video completo</h2>
-        <div class="warning">⚠️ Si no ves el video completo no se sumarán puntos.</div>
+<section class="section">
+<h2>🎬 Ver video</h2>
 
-        <div class="card" onclick="tarea(this,'v1'); abrir('https://youtu.be/MUi89J7Gdno')">📺 Tarea 1</div>
-        <div class="card" onclick="tarea(this,'v2'); abrir('https://youtu.be/LWWLeGpX9t4')">📺 Tarea 2</div>
-        <div class="card" onclick="tarea(this,'v3'); abrir('https://youtu.be/1afSoIu10f4')">📺 Tarea 3</div>
-        <div class="card" onclick="tarea(this,'v4'); abrir('https://youtu.be/qY4lv7luBMo')">📺 Tarea 4</div>
-        <div class="card" onclick="tarea(this,'v5'); abrir('https://youtu.be/bBFLeC78zCs')">📺 Tarea 5</div>
+<div class="card" onclick="tarea(this,'v1'); abrir('https://youtu.be/MUi89J7Gdno')">📺 Tarea 1</div>
+<div class="card" onclick="tarea(this,'v2'); abrir('https://youtu.be/LWWLeGpX9t4')">📺 Tarea 2</div>
+<div class="card" onclick="tarea(this,'v3'); abrir('https://youtu.be/1afSoIu10f4')">📺 Tarea 3</div>
+<div class="card" onclick="tarea(this,'v4'); abrir('https://youtu.be/qY4lv7luBMo')">📺 Tarea 4</div>
+<div class="card" onclick="tarea(this,'v5'); abrir('https://youtu.be/bBFLeC78zCs')">📺 Tarea 5</div>
+<div class="card" onclick="tarea(this,'v6'); abrir('https://youtu.be/1CBT-SmZGNQ?si=qaDXgdh8adMvllbC')">📺 Tarea 6</div>
 
-        <button id="btnVideo" class="btn disabled" onclick="irCompleto('video')">🔒 COMPLETÉ TODAS LAS TAREAS</button>
-        <button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
-    </section>
+<button class="btn" onclick="mostrar('completado')">COMPLETÉ TODAS LAS TAREAS</button>
+<button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
+</section>
 </div>
 
 <!-- LIKE -->
 <div id="like" class="hidden">
-    <section class="section">
-        <h2>❤️ Dar like al video</h2>
+<section class="section">
+<h2>❤️ Dar like</h2>
 
-        <div class="card" onclick="tarea(this,'l1'); abrir('https://youtu.be/MUi89J7Gdno')">👍 Tarea 1</div>
-        <div class="card" onclick="tarea(this,'l2'); abrir('https://youtu.be/LWWLeGpX9t4')">👍 Tarea 2</div>
-        <div class="card" onclick="tarea(this,'l3'); abrir('https://youtu.be/1afSoIu10f4')">👍 Tarea 3</div>
-        <div class="card" onclick="tarea(this,'l4'); abrir('https://youtu.be/qY4lv7luBMo')">👍 Tarea 4</div>
-        <div class="card" onclick="tarea(this,'l5'); abrir('https://youtu.be/bBFLeC78zCs')">👍 Tarea 5</div>
+<div class="card" onclick="tarea(this,'l1'); abrir('https://youtu.be/MUi89J7Gdno')">👍 Tarea 1</div>
+<div class="card" onclick="tarea(this,'l2'); abrir('https://youtu.be/LWWLeGpX9t4')">👍 Tarea 2</div>
+<div class="card" onclick="tarea(this,'l3'); abrir('https://youtu.be/1afSoIu10f4')">👍 Tarea 3</div>
+<div class="card" onclick="tarea(this,'l4'); abrir('https://youtu.be/qY4lv7luBMo')">👍 Tarea 4</div>
+<div class="card" onclick="tarea(this,'l5'); abrir('https://youtu.be/bBFLeC78zCs')">👍 Tarea 5</div>
+<div class="card" onclick="tarea(this,'l6'); abrir('https://youtu.be/1CBT-SmZGNQ?si=qaDXgdh8adMvllbC')">👍 Tarea 6</div>
 
-        <button id="btnLike" class="btn disabled" onclick="irCompleto('like')">🔒 COMPLETÉ TODAS LAS TAREAS</button>
-        <button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
-    </section>
+<button class="btn" onclick="mostrar('completado')">COMPLETÉ TODAS LAS TAREAS</button>
+<button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
+</section>
 </div>
 
 <!-- COMENTARIO -->
 <div id="comentario" class="hidden">
-    <section class="section">
-        <h2>💬 Comentar en el video</h2>
-        <div class="warning">⚠️ Comentar algo coherente al video o similar.</div>
+<section class="section">
+<h2>💬 Comentar</h2>
 
-        <div class="card" onclick="tarea(this,'c1'); abrir('https://youtu.be/MUi89J7Gdno')">💭 Tarea 1</div>
-        <div class="card" onclick="tarea(this,'c2'); abrir('https://youtu.be/LWWLeGpX9t4')">💭 Tarea 2</div>
-        <div class="card" onclick="tarea(this,'c3'); abrir('https://youtu.be/1afSoIu10f4')">💭 Tarea 3</div>
-        <div class="card" onclick="tarea(this,'c4'); abrir('https://youtu.be/qY4lv7luBMo')">💭 Tarea 4</div>
-        <div class="card" onclick="tarea(this,'c5'); abrir('https://youtu.be/bBFLeC78zCs')">💭 Tarea 5</div>
+<div class="card" onclick="tarea(this,'c1'); abrir('https://youtu.be/MUi89J7Gdno')">💭 Tarea 1</div>
+<div class="card" onclick="tarea(this,'c2'); abrir('https://youtu.be/LWWLeGpX9t4')">💭 Tarea 2</div>
+<div class="card" onclick="tarea(this,'c3'); abrir('https://youtu.be/1afSoIu10f4')">💭 Tarea 3</div>
+<div class="card" onclick="tarea(this,'c4'); abrir('https://youtu.be/qY4lv7luBMo')">💭 Tarea 4</div>
+<div class="card" onclick="tarea(this,'c5'); abrir('https://youtu.be/bBFLeC78zCs')">💭 Tarea 5</div>
+<div class="card" onclick="tarea(this,'c6'); abrir('https://youtu.be/1CBT-SmZGNQ?si=qaDXgdh8adMvllbC')">💭 Tarea 6</div>
 
-        <button id="btnCom" class="btn disabled" onclick="irCompleto('comentario')">🔒 COMPLETÉ TODAS LAS TAREAS</button>
-        <button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
-    </section>
+<button class="btn" onclick="mostrar('completado')">COMPLETÉ TODAS LAS TAREAS</button>
+<button class="btn" onclick="mostrar('panel')">⬅ Volver</button>
+</section>
 </div>
 
-<!-- COMPLETADO MEJORADO -->
 <div id="completado" class="hidden">
-    <section class="section">
-        <h2 style="text-align:center;">🎉 Tareas completadas</h2>
-
-        <div class="card" style="text-align:center;">
-            <h3>📢 Reclama tus seguidores</h3>
-            <p style="color:#aaa;">Sigue estos pasos</p>
-        </div>
-
-        <div class="card">
-            <h3>1️⃣ Contacta al agente</h3>
-            <button class="btn" style="width:100%;" onclick="abrir('https://www.tiktok.com/@infinite_follower?_r=1&_t=ZS-963clShSG7J')">
-            Contactar agente
-            </button>
-        </div>
-
-        <div class="card">
-            <h3>2️⃣ Envía tu usuario</h3>
-            <p style="color:#aaa;">Envía tu canal de YouTube</p>
-        </div>
-
-        <div class="card">
-            <h3>3️⃣ Recibe tus seguidores</h3>
-            <p style="color:#aaa;">Recibirás tus seguidores</p>
-        </div>
-
-        <button class="btn" style="width:100%;" onclick="mostrar('panel')">⬅ Volver</button>
-    </section>
+<section class="section">
+<h2 style="text-align:center;">🎉 Tareas completadas</h2>
+<button class="btn" onclick="mostrar('panel')">Volver</button>
+</section>
 </div>
 
 <script>
 function mostrar(id){
-    ["home","panel","video","like","comentario","completado"].forEach(x=>{
-        document.getElementById(x).classList.add("hidden");
-    });
-    document.getElementById(id).classList.remove("hidden");
+["home","panel","video","like","comentario","completado"].forEach(x=>{
+document.getElementById(x).classList.add("hidden");
+});
+document.getElementById(id).classList.remove("hidden");
 }
 
-function abrir(url){
-    window.open(url,"_blank");
-}
+function abrir(url){ window.open(url,"_blank"); }
 
 let progreso = JSON.parse(localStorage.getItem("progreso")) || {};
 
 function tarea(el,id){
-    if(progreso[id]) return;
-    progreso[id]=true;
-    localStorage.setItem("progreso",JSON.stringify(progreso));
-    el.classList.add("done");
-    verificar();
+if(progreso[id]) return;
+
+let tiempo = 12;
+el.style.pointerEvents="none";
+
+let intervalo = setInterval(()=>{
+tiempo--;
+el.innerText = "⏳ Espera " + tiempo + "s";
+
+if(tiempo<=0){
+clearInterval(intervalo);
+
+progreso[id]=true;
+localStorage.setItem("progreso",JSON.stringify(progreso));
+
+el.classList.add("done");
+el.innerText="✅ Completado";
+}
+},1000);
 }
 
-function verificar(){
-    let grupos={
-        video:["v1","v2","v3","v4","v5"],
-        like:["l1","l2","l3","l4","l5"],
-        comentario:["c1","c2","c3","c4","c5"]
-    };
-
-    for(let g in grupos){
-        let completas=grupos[g].every(id=>progreso[id]);
-
-        let btn=document.getElementById(
-            g==="video"?"btnVideo":
-            g==="like"?"btnLike":"btnCom"
-        );
-
-        if(completas){
-            btn.classList.remove("disabled");
-            btn.textContent="COMPLETÉ TODAS LAS TAREAS";
-        }
-    }
+function restaurar(){
+for(let id in progreso){
+if(progreso[id]){
+document.querySelectorAll(".card").forEach(el=>{
+if(el.getAttribute("onclick")?.includes(id)){
+el.classList.add("done");
+el.innerText="✅ Completado";
+}
+});
+}
+}
 }
 
-window.onload=verificar;
-
-function irCompleto(seccion){
-    let btn=document.getElementById(
-        seccion==="video"?"btnVideo":
-        seccion==="like"?"btnLike":"btnCom"
-    );
-    if(btn.classList.contains("disabled")) return;
-    mostrar("completado");
-}
+window.onload=restaurar;
 </script>
 
 </body>
